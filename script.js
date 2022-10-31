@@ -1,7 +1,7 @@
-let humanChoice;
-let computerChoice = "";
+
 
 const getComputerChoice = function () {
+  let computerChoice;
   let random = Math.floor(Math.random() * 3) + 1;
   if (random === 1) {
     computerChoice = "rock";
@@ -44,10 +44,12 @@ const game = function () {
   let roundResult;
   let humanScore = 0;
   let computerScore = 0;
+  let humanChoice;
 
   for (let i = 0; i < 5; i++) {
     humanChoice = prompt(
-      "Choose your weapon: Rock | Paper | Scissors"
+      `ROUND ${i+1}:
+      Choose your weapon: Rock | Paper | Scissors`
     ).toLowerCase();
 
     roundResult = playRound(humanChoice, getComputerChoice());
